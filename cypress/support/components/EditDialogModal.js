@@ -185,6 +185,7 @@ function VerifyEntityLabeledDifferentPopupAndClickButton(textEntityPairs, button
   })
 }
 
+/*
 export function VerifyEntityLabelWithinSpecificInput(textEntityPairs, index)
 {
   cy.Get('div.slate-editor').then(elements =>
@@ -197,6 +198,7 @@ export function VerifyEntityLabelWithinSpecificInput(textEntityPairs, index)
     })
   })
 }
+*/
 
 export function InsertUserInputAfter(existingMessage, newMessage)
 {

@@ -5,6 +5,7 @@
 
 const helpers = require('../../support/Helpers')
 const homePage = require('../../support/components/HomePage')
+const models = require('../../support/Models')
 const modelPage = require('../../support/components/ModelPage')
 const train = require('../../support/Train')
 const trainDialogsGrid = require('../../support/components/TrainDialogsGrid')
@@ -15,10 +16,13 @@ describe('zTemp test', () =>
 {
   it('zTemp test', () => 
   {
-    homePage.Visit()
-    // homePage.NavigateToModelPage("BigTrain")
-    // modelPage.NavigateToTrainDialogs()
-    // cy.pause()
-    // cy.Train_CaptureAllChatMessages()
+    models.ImportModel('z-errorHandling', 'z-disqualifyngEnt.Trained.cl')
+    modelPage.NavigateToTrainDialogs()
+    cy.WaitForTrainingStatusCompleted()
+    
+    modelPage.VerifyNoErrorIconOnPage()
+  
+    train.EditTraining('Hey', 'world peace', "Sorry $name, I can't help you get $want")
+    editDialogModal.InsertUserInputAfter('Sam', 'InsertedText')
   })
 })
