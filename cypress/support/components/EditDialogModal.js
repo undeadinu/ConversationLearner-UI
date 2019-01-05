@@ -185,7 +185,6 @@ function VerifyEntityLabeledDifferentPopupAndClickButton(textEntityPairs, button
   })
 }
 
-/*
 export function VerifyEntityLabelWithinSpecificInput(textEntityPairs, index)
 {
   cy.Get('div.slate-editor').then(elements =>
@@ -198,24 +197,10 @@ export function VerifyEntityLabelWithinSpecificInput(textEntityPairs, index)
     })
   })
 }
-*/
 
 export function InsertUserInputAfter(existingMessage, newMessage)
 {
   SelectChatTurn(existingMessage)
-  TypeYourMessage(newMessage)
-/*
-// TODO: While the above code works, it is not ideal, this is a hack.
-//       Get this working when the following task has been completed by UI team.
-//       1823 - Fix Add Bot Response AND Add User Input Buttons in Train Dialog
   cy.wait(1000)
-  //cy.get('[data-testid="edit-dialog-modal-branch-button"]').click()
-  cy.get('[data-testid="chat-edit-add-bot-response-button"]').click()
-  //cy.get('[data-testid="chat-edit-add-user-input-button"]').click()//.then(()=>
-  // {
-  //   cy.wait(1000)
-  //   cy.Get('data-testid="user-input-modal-new-message-input"').type(`${newMessage}{enter}`)
-  // })
-}
-*/
+  cy.get('[data-testid="chat-edit-add-user-input-button"]').click()
 }
