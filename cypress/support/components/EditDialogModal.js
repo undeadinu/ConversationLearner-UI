@@ -203,4 +203,8 @@ export function InsertUserInputAfter(existingMessage, newMessage)
   SelectChatTurn(existingMessage)
   cy.wait(1000)
   cy.get('[data-testid="chat-edit-add-user-input-button"]').click()
+  // cy.get('.cl-addbutton-svg-input')
+  // .trigger('mouseover')
+  // .wait(1000)
+  // .click()
 }
