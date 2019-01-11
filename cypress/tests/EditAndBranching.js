@@ -9,6 +9,9 @@ const scorerModal = require('../support/components/ScorerModal')
 const train = require('../support/Train')
 const editDialogModal = require('../support/components/EditDialogModal')
 
+const uiStrings = require('C:/repo/ConversationLearner-UI/src/react-intl-messages.ts')
+var replayErrorExists = uiStrings.FM.ReplayError.exists
+
 export function VerifyEditTrainingControlsAndLabels()
 {
   var modelName = models.ImportModel('z-editContols', 'z-nameTrained.cl')
@@ -100,7 +103,7 @@ export function ValidateErrorHandling()
 
   train.EditTraining('Hey', 'world peace', "Sorry $name, I can't help you get $want")
   editDialogModal.InsertUserInputAfter('Sam', 'InsertedText')
-  editDialogModal.VerifyErrorMessage('This Train Dialog has errors that must be fixed before it can be used to train your model')
+  editDialogModal.VerifyErrorMessage(replayErrorExists)//'This Train Dialog has errors that must be fixed before it can be used to train your model')
   editDialogModal.SelectChatTurn('Sam')
   editDialogModal.VerifyErrorMessage('Two consecutive User Inputs')
 

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "strict": true,
+    "baseUrl": "../node_modules",
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
@@ -23,7 +24,8 @@
     "noUnusedLocals": true,
     "types": [
       "node",
-      "jest"
+      "jest",
+      "cypress"
     ]
   },
   "exclude": [
@@ -37,5 +39,8 @@
     "src/setupTests.ts",
     "publish",
     "package"
+  ],
+  "include": [
+    "**/*.ts"
   ]
 }
